@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    public int level;
-    [SerializeField]
-    public int health;
+    [SerializeField] public int level;
+    [SerializeField] public int health;
 
     public void LevelUp()
     {

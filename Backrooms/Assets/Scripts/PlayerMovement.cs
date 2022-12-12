@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
-    // tutorial : https://www.youtube.com/watch?v=f473C43s8nE
+    // movement tutorial : https://www.youtube.com/watch?v=f473C43s8nE
+    // audio tutorial : 3 min https://www.youtube.com/watch?v=wXcjxeetg70
+
 
     //Data
+
 
     [Header("Movement")]
     public float moveSpeed;
@@ -27,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Orientation")]
     public Transform orientation;
 
+    [Header("Audio")]
+    public List<AudioClip> footStepSounds = new List<AudioClip>();
+    public AudioSource audioSource;
+
     float horizontalInput;
     float verticalInput;
 
@@ -38,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
@@ -75,6 +85,20 @@ public class PlayerMovement : MonoBehaviour
 
 
     //Funcs
+
+    private void PlayFootStepAudio()
+    {
+        if (grounded)
+        {
+            return;
+        }
+        int n = Random.Range(0, footStepSounds.Count);
+        audioSource.clip = footStepSounds[n];
+        audioSource.PlayOneShot(audioSource.clip);
+
+
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
