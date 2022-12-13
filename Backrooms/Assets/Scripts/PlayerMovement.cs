@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
     // movement tutorial : https://www.youtube.com/watch?v=f473C43s8nE
@@ -32,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
 
     [Header("Audio")]
-    public List<AudioClip> footStepSounds = new List<AudioClip>();
-    public AudioSource audioSource;
+    //public List<AudioClip> footStepSounds = new List<AudioClip>();
+    public AudioSource footstepAudio;
 
     float horizontalInput;
     float verticalInput;
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //footstepAudio = GetComponent<AudioSource>();
 
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
@@ -62,10 +62,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded)
         {
+            PlayFootStepAudio();
             rb.drag = groundDrag;
         }
         else
         {
+            footstepAudio.enabled = false;
             rb.drag = 0;
         }
     }
@@ -88,15 +90,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayFootStepAudio()
     {
-        if (grounded)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            return;
+            footstepAudio.enabled = true;
+            Debug.Log("walking sound");
         }
-        int n = Random.Range(0, footStepSounds.Count);
-        audioSource.clip = footStepSounds[n];
-        audioSource.PlayOneShot(audioSource.clip);
-
-
+        else
+        {
+            footstepAudio.enabled = false;
+        }
+        //int n = Random.Range(0, footStepSounds.Count);
+        //footstepAudio.clip = footStepSounds[n];
+        //footstepAudio.PlayOneShot(footstepAudio.clip);
     }
 
 

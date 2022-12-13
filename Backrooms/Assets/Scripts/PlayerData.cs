@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
 
 [System.Serializable]
@@ -22,7 +22,7 @@ public class PlayerData
 
 
     // constructor
-    public PlayerData (Player player)
+    public PlayerData(Player player)
     {
         playerLevel = player.level;
         playerHealth = player.health;
@@ -34,3 +34,4 @@ public class PlayerData
     }
 
 }
+
