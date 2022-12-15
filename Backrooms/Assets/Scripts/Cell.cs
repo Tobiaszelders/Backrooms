@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 { 
-    [SerializeField] private int spawnChance;
-    [SerializeField] private int entitySpawnChance;
-    [SerializeField] private Vector3 position;
-    [SerializeField] private CellType cellType;
+    [SerializeField] public float spawnChance;
+    [SerializeField] public float entitySpawnChance;
+    //[SerializeField] private Vector3? position;
+    [SerializeField] public CellType cellType;
 
     public enum CellType
     {
@@ -17,11 +17,11 @@ public class Cell : MonoBehaviour
         Manila
     }
 
-    public Cell(int SpawnChance, int EntitySpawnChance, Vector3 Position, CellType CellType)
+    public Cell(float SpawnChance, float EntitySpawnChance, CellType CellType)
     {
         spawnChance = SpawnChance;
         entitySpawnChance = EntitySpawnChance;
-        position = Position;
+        //position = Position;
         cellType = CellType;
     }
 

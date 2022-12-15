@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             footstepAudio.enabled = true;
-            Debug.Log("walking sound");
+            //Debug.Log("walking sound");
         }
         else
         {
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("jump function");
+        //Debug.Log("jump function");
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
