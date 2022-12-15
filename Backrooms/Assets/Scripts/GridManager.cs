@@ -19,6 +19,8 @@ public class GridManager : MonoBehaviour
     public int initialCellRows;
     public int initialCellColumns; //square 3x3   rows horizantol - columns vertical
 
+    List<Cell> activeCells;
+
     float cellSizeX = 1;
     float cellSizeZ = 1;
     float cellSizeY = 1;
@@ -42,29 +44,24 @@ public class GridManager : MonoBehaviour
 
     void SpawnGrid()
     {
-        //Hier waren we mee bezig!!!
-        for(int i = 0; i < initialCellColumns; i++)
+        for (int i = 0; i < initialCellColumns; i++)
         {
             float x = player.position.x - cellSizeX * i;
-            for(int j = 0; j < initialCellRows; j++)
+            for (int j = 0; j < initialCellRows; j++)
             {
                 float z = player.position.z - cellSizeZ * j;
                 var cell = RandomCellGenerator();
-                Instantiate(cell, new Vector3(x, player.position.y + 3, z), Quaternion.identity);
+                Instantiate(cell, new Vector3(x + (initialCellColumns / 2), player.position.y + 5, z + (initialCellRows / 2)), Quaternion.identity);
+
             }
         }
 
     }
 
-    void positionSpawn(int i)
+
+    void UpdateGrid()
     {
-
-    }
-
-
-    void UpdateGrid(Player player)
-    {
-
+        //if(playerX > )
         
 
         //if (player.transform.position.x > cellSizeX )

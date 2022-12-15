@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603acdd237d83594685a58e0e5716384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChance: 0.05
+  spawnChance: 0.005
   entitySpawnChance: 0
   cellType: 2
 --- !u!1 &7820055521947833034
