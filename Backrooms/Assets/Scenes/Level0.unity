@@ -187,6 +187,8 @@ MonoBehaviour:
   defaultCell: {fileID: 2413249775721949562, guid: 099235bb1be43d7468907a4be7180606, type: 3}
   exitCell: {fileID: -6133321097025506494, guid: 27a46e7155979764e889dd311ad55a96, type: 3}
   manilaCell: {fileID: -946049586634679501, guid: 27ea044b4527bf74fa929f131b355dc8, type: 3}
+  renderDistance: 1
+  initialCells: 9
 --- !u!4 &184060631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3102949224946012632, guid: d04dea630a3cbdc4481d1dd8757f6590, type: 3}
@@ -1435,7 +1437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.74
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1443,7 +1445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 12.28
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalRotation.w

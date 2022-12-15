@@ -13,14 +13,13 @@ public class GridManager : MonoBehaviour
     public Cell exitCell;
     public Cell manilaCell;
 
+    [Header("Render")]
+    public int renderDistance = 1;
+    public int initialCells = 9; //square 3x3   
 
     float playerX;
     float playerZ;
     float playerY;
-
-    //[Header("Cells")]
-    //public GameObject cell;
-    
 
     void Start()
     {
@@ -37,12 +36,13 @@ public class GridManager : MonoBehaviour
 
     void SpawnGrid()
     {
-        var Cel1 = RandomCellGenerator();
-        Instantiate(Cel1, new Vector3(player.position.x, player.position.y + 3, player.position.z), Quaternion.identity);
-        Debug.Log("Cell instantiated at");
-        Debug.Log(player.position.x);
-        Debug.Log(player.position.z);
-        Debug.Log(player.position.y + 3);
+        //Hier waren we mee bezig!!!
+        for(int i = 0; i < initialCells; i++)
+        {
+            var cell = RandomCellGenerator();
+            Instantiate(cell, new Vector3(player.position.x, player.position.y + 3, player.position.z), Quaternion.identity);
+        }
+
     }
 
 
@@ -51,7 +51,7 @@ public class GridManager : MonoBehaviour
         int cellSizeX = 1;
         int cellSizeZ = 1;
         int cellSizeY = 1;
-        int renderDistance = 1;
+        
 
         //if (player.transform.position.x > cellSizeX )
 
