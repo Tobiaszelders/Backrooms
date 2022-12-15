@@ -14,8 +14,14 @@ public class GridManager : MonoBehaviour
     public Cell manilaCell;
 
     [Header("Render")]
-    public int renderDistance = 1;
-    public int initialCells = 9; //square 3x3   
+    public int renderDistance;
+    //public int initialCells = 9;
+    public int initialCellRows;
+    public int initialCellColumns; //square 3x3   rows horizantol - columns vertical
+
+    float cellSizeX = 1;
+    float cellSizeZ = 1;
+    float cellSizeY = 1;
 
     float playerX;
     float playerZ;
@@ -29,28 +35,36 @@ public class GridManager : MonoBehaviour
     }
     void Update()
     {
-        playerX = player.transform.position.x;
-        playerZ = player.transform.position.z;
-        playerY = player.transform.position.y;
+        playerX = player.position.x;
+        playerZ = player.position.z;
+        playerY = player.position.y;
     }
 
     void SpawnGrid()
     {
         //Hier waren we mee bezig!!!
-        for(int i = 0; i < initialCells; i++)
+        for(int i = 0; i < initialCellColumns; i++)
         {
-            var cell = RandomCellGenerator();
-            Instantiate(cell, new Vector3(player.position.x, player.position.y + 3, player.position.z), Quaternion.identity);
+            float x = player.position.x - cellSizeX * i;
+            for(int j = 0; j < initialCellRows; j++)
+            {
+                float z = player.position.z - cellSizeZ * j;
+                var cell = RandomCellGenerator();
+                Instantiate(cell, new Vector3(x, player.position.y + 3, z), Quaternion.identity);
+            }
         }
+
+    }
+
+    void positionSpawn(int i)
+    {
 
     }
 
 
     void UpdateGrid(Player player)
     {
-        int cellSizeX = 1;
-        int cellSizeZ = 1;
-        int cellSizeY = 1;
+
         
 
         //if (player.transform.position.x > cellSizeX )
@@ -62,10 +76,6 @@ public class GridManager : MonoBehaviour
 
     Cell RandomCellGenerator()
     {
-        //Cell defaultCell = new Cell(0.94f, 5, Cell.CellType.Default);
-        //Cell exitCell = new Cell(0.05f, 0, Cell.CellType.Exit);
-        //Cell manilaCell = new Cell(0.01f, 5, Cell.CellType.Manila);
-
         float randomPercentage = Random.value;
 
         if (randomPercentage < defaultCell.spawnChance)

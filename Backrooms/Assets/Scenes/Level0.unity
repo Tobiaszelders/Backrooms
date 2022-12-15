@@ -188,7 +188,8 @@ MonoBehaviour:
   exitCell: {fileID: -6133321097025506494, guid: 27a46e7155979764e889dd311ad55a96, type: 3}
   manilaCell: {fileID: -946049586634679501, guid: 27ea044b4527bf74fa929f131b355dc8, type: 3}
   renderDistance: 1
-  initialCells: 9
+  initialCellRows: 6
+  initialCellColumns: 6
 --- !u!4 &184060631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3102949224946012632, guid: d04dea630a3cbdc4481d1dd8757f6590, type: 3}
@@ -224,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465099875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.9, y: 8.81, z: -35.82}
+  m_LocalPosition: {x: -2.12, y: -6.79, z: -10.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,7 +243,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9254902, g: 0.877236, b: 0.45882353, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.54
   m_Range: 73.62
   m_SpotAngle: 30
@@ -1437,7 +1438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.74
+      value: -5.95
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1445,7 +1446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.28
+      value: 13.61
       objectReference: {fileID: 0}
     - target: {fileID: 1727328868528574735, guid: 1ed5189d5d0cf9b45a59dd0bab6b3588, type: 3}
       propertyPath: m_LocalRotation.w
